@@ -1,0 +1,27 @@
+#include "../include/SchoolManagement.h"
+
+
+void SchoolManagement::registerUser(SMSy::UserId userId, UserRole role, std::string userName)
+{
+	std::unique_ptr<User> uptr= std::make_unique<User>(userId, userName, role);
+	users.insert(userId, std::move(uptr));	
+}
+void SchoolManagement::addSubject(const SMSy::UserId_t userId, const SMSy::SubjectId_t subjectId)
+{
+	//Check if user is authenticated to do so
+	if(users[userId]-> canModifySubjectPool(userId))
+		subjectPool->addSubjectToPool(subjectId, std::make_unique_ptr<Subject>())
+}
+void SchoolManagement::addStudent(const SMSy::UserId_t userId)
+{
+	//Create a student
+	if(users[userId]->canAddStudent())
+	{
+		students.insert(Student::createStudent());
+
+	}
+	else
+		throw "No authorized";
+}
+
+

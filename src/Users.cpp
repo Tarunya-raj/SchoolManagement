@@ -25,16 +25,10 @@ bool Users::canWriteMarks()
 		return true;
 	return false;
 }
-bool Users::canModifyStudentDetails()
-{
-	if(role ==SMSy::UserRole::Admin)
-		return true;
-	return false;
-}
-bool Users::canAddStudent()
+
+bool Users::canManageStudentData()
 {
 	if(role == SMSy::UserRole::Admin)
 		return true;
 	return false;
 }
-

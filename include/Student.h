@@ -44,7 +44,7 @@ class Student{
 	public:
 		explicit Student(std::string sName, std::string pName, SMSy::StudentId_t studentId, std::string contactDetails, uint32_t date=00, uint32_t month=00, uint32_t year=0000, std::string address="" );		
 	public:
-		static std::pair<SMSy::StudentId_t, std::unique_ptr<Student>> createStudent();
+		static std::pair<SMSy::StudentId_t, std::unique_ptr<Student>> createStudent(const SMSy::StudentId_t);
 		Student(const Student &) =delete;
 		Student& operator=(const Student&)= delete;
 		Student(Student&&) = default;

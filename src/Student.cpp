@@ -1,19 +1,18 @@
 #include "../include/Student.h"
+#include <limits>
 #include <iostream>
-std::pair<SMSy::StudentId_t ,std::unique_ptr<Student>> Student::createStudent()
+std::pair<SMSy::StudentId_t ,std::unique_ptr<Student>> Student::createStudent(const SMSy::StudentId_t sId)
 {
 
 	std::string sName, pName, contactDetails, address;
 	uint32_t bday,byear, bMonth;
-	SMSy::StudentId_t sId;
 	std::cout<<"Registering Student Details....\n";
 	std::cout<<"Enter student Name: ";
 	std::cin>>sName;
-	std::cout<<"Enter student Id: ";
-	std::cin>>sId;
 	std::cout<<"Enter Parent Name: ";
 	std::cin>>pName;
 	std::cout<<"Enter Address: ";
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	std::getline(std::cin,address);
 	std::cout<<"Bdate";
 	std::cin>>bday;

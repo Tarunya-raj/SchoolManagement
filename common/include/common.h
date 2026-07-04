@@ -41,7 +41,7 @@ enum class StudentStatus{
 
 enum class Choice
 {
-	AddStudent,
+	AddStudent=1,
 	DeleteStudent,
 	AddClass,
 	DeleteClass,
@@ -49,7 +49,8 @@ enum class Choice
 	DeleteSubjectPool,
 	ModifyStudentDetails,
 	AddMarks,
-	SelectStudentSubjects
+	SelectStudentSubjects,
+	Exit
 };
 }
 

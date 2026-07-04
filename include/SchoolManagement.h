@@ -18,7 +18,8 @@ class SchoolManagement{
 	public:
 		void registerUser(SMSy::UserId_t userId, SMSy::UserRole role, std::string userName );
 		void addSubject(const SMSy::UserId_t userId, const SMSy::SubjectId_t subjectId);
-		void addStudent(SMSy::UserId_t userId);
+		void addStudent(const SMSy::UserId_t, const SMSy::StudentId_t);
+		void deleteStudent(const SMSy::UserId_t, const SMSy::StudentId_t );
 		[[nodiscard]] SMSy::StudentId_t getNumberOfStudents(); 
 };
 #endif

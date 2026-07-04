@@ -12,11 +12,11 @@ class Users
 		bool canRegisterUser(); //Management, 
 		bool canModifySubjectPool(); //management 
 		bool canWriteMarks(); // Teacher
-		bool canAddStudent(); //Admin
+		bool canManageStudentData(); //Admin
 		//bool canViewDetails(UserRole); //Management, Teacher, Admin, viewer
 
 	       //bool canRead(uint32_t userId); //managemnet Admin, Teacher, Viewer ALL	
 
 
-		bool canModifyStudentDetails();
+		//bool canModifyStudentDetails();
 };

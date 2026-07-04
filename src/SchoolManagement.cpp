@@ -17,20 +17,25 @@ SMSy::StudentId_t SchoolManagement::getNumberOfStudents()
 {
 	return students.size();
 }
-void SchoolManagement::addStudent(const SMSy::UserId_t userId_)
+void SchoolManagement::addStudent(const SMSy::UserId_t userId,const SMSy::StudentId_t nextStudentId )
 {
 	//Create a student
-	//
-	SMSy::UserId_t userId;
-	std::cout<<"Enter your Id: ";
-	std::cin>>userId;
-	if(users[userId]->canAddStudent())
+	if(users[userId]->canManageStudentData())
 	{
-		students.emplace(Student::createStudent());
+		students.emplace(Student::createStudent(nextStudentId));
 
 	}
 	else
 		throw std::runtime_error("Permission Denied");
 }
 
+void SchoolManagement::deleteStudent(SMSy::UserId_t userId,SMSy::StudentId_t sId) 
+{
+	if(users[userId]->canManageStudentData())
+	{
+		//students.erase(sId);
+	}
+	else 
+		throw std::runtime_error("Permission Denied\n");
 
+}

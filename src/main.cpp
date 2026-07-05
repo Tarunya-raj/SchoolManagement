@@ -50,11 +50,12 @@ int main()
 	
 	while(running)
 	{
-		SMSy::Choice choose=showMenu();
+		//SMSy::Choice choose=showMenu();
 		try{
 			SMSy::UserId_t userId;
 			std::cout<<"Enter your Id: ";
 			std::cin>>userId;
+			SMSy::Choice choose= showMenu();
 			switch(choose)
 			{
 				case SMSy::Choice::AddStudent:
